@@ -5,11 +5,11 @@ class Circle: public Shape
 {
 public:
     Circle(int n, int xx, int yy, int r);
-    int getArea();
+    double getArea();
 
 private:
     Point center;
-    int radius;
+    double radius;
 };
 
 #endif

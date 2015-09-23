@@ -5,7 +5,7 @@ class Rectangle: public Shape
 {
 public:
     Rectangle(int n, int xx, int yy, int w, int h);
-    int getArea();
+    double getArea();
 
 private:
     int width;
