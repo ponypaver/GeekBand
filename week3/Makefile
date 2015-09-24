@@ -1,7 +1,7 @@
 shape: rectangle.o circle.o shape.o
-	g++ $^ -o $@
+	g++ -g $^ -o $@
 .c.o:
-	g++ -c $< 
+	g++ -g -c -o $@ $<
 
 clean:
 	rm -f *.o shape
