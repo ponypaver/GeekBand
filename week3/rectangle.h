@@ -1,5 +1,5 @@
-#ifndef __MY_RECTANGLE_H__
-#define __MY_RECTANGLE_H__
+#ifndef __RECTANGLE_H__
+#define __RECTANGLE_H__
 
 class Rectangle: public Shape
 {

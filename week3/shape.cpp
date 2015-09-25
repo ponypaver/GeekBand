@@ -33,24 +33,41 @@ int removeshape(Shape *s[], Shape* d[])
     return remain;
 }
 
-int main(void)
+void init(Shape *s[], int N)
 {
-    int remain;
-    Shape* s[20];
-    Shape* d[20];
-
-    srand(time(NULL));
-
-    for (int n = 0, i = 0; i < 20; i+=2)
+    srand(unsigned(time(NULL)));
+    for (int n = 0, i = 0; i < N; i+=2)
     {
         s[i] = new Rectangle(++n, rand()%10+1, rand()%10+1, rand()%10+1, rand()%10+1);
         s[i+1] = new Circle(++n, rand()%10+1, rand()%10+1, rand()%10+1);
     }
+}
+
+void Null_Dangling_pointer(Shape *s[], int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        if (NULL != s[i])
+            s[i] = NULL;
+    }
+}
+
+int main(void)
+{
+    const int N = 20;
+    int remain;
+    Shape* s[N] = {NULL};
+    Shape* d[N] = {NULL};
+    
+    init(s, N);
+    
     std::cout << "Oringal 20 shapes:" << std::endl;
-    print(s, 20);
+    print(s, N);
     remain = removeshape(s, d);
     std::cout << std::endl << "After removed the Shapes whose area less than 50" << std::endl;
     print(d, remain);
+
+    Null_Dangling_pointer(s, N);
 
     return 0;
 }

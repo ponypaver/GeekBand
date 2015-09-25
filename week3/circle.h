@@ -1,5 +1,5 @@
-#ifndef __MY_CIRCLE_H__
-#define __MY_CIRCLE_H__
+#ifndef __CIRCLE_H__
+#define __CIRCLE_H__
 
 class Circle: public Shape
 {

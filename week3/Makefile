@@ -1,7 +1,10 @@
+CC = g++
+CFLAGS = -g -O3 -Wall
+
 shape: rectangle.o circle.o shape.o
-	g++ -g $^ -o $@
+	${CC} ${CFLAGS} -o $@ $^
 .c.o:
-	g++ -g -c -o $@ $<
+	${CC} ${CFLAGS} -o $@ -c $<
 
 clean:
 	rm -f *.o shape
