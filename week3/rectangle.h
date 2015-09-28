@@ -1,11 +1,11 @@
-#ifndef __MY_RECTANGLE_H__
-#define __MY_RECTANGLE_H__
+#ifndef __RECTANGLE_H__
+#define __RECTANGLE_H__
 
 class Rectangle: public Shape
 {
 public:
     Rectangle(int n, int xx, int yy, int w, int h);
-    int getArea();
+    double getArea();
 
 private:
     int width;

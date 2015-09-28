@@ -18,7 +18,12 @@
 class Shape
 {
 public:
-    virtual int getArea() = 0;
+    Shape(int n)
+     : no(n) 
+    { }
+    virtual ~Shape()
+    { }
+    virtual double getArea() = 0;
 
 private:
     int no;
@@ -35,38 +40,5 @@ private:
     int x;
     int y;
 };
-
-class Rectangle: public Shape
-{
-public:
-    Rectangle(int n, int xx, int yy, int w, int h);
-    int getArea();
-
-private:
-    int width;
-    int height;
-    Point leftUp;
-};
-
-class Circle: public Shape
-{
-public:
-    Circle(int n, int xx, int yy, int r);
-    int getArea();
-
-private:
-    Point center;
-    int radius;
-};
-
-inline int Rectangle::getArea()
-{
-    return width * height;
-}
-
-inline int Circle::getArea()
-{
-    return M_PI * radius * radius;
-}
 
 #endif
