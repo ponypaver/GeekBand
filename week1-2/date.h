@@ -9,9 +9,9 @@ public:
     {
     }
 
-    bool operator > (date& d) const;
-    bool operator < (date& d) const;
-    bool operator == (date& d) const;
+    bool operator > (const date& d) const;
+    bool operator < (const date& d) const;
+    bool operator == (const date& d) const;
     
 private:
     int year, month, day;
@@ -29,7 +29,7 @@ inline std::ostream& operator << (std::ostream &os, date& d)
     return os << d.year << '-' << d.month << '-' << d.day << std::endl;
 }
 
-inline bool date::operator > (date& d) const
+inline bool date::operator > (const date& d) const
 {
     if (this->year > d.year)
         return true;
@@ -50,12 +50,12 @@ inline bool date::operator > (date& d) const
     }
 }
 
-inline bool date::operator < (date& d) const
+inline bool date::operator < (const date& d) const
 {
     return (*this) > d ? false : true;
 }
 
-inline bool date::operator == (date& d) const
+inline bool date::operator == (const date& d) const
 {
     return (this->year == d.year) && (this->month == d.month) && (this->day == d.day);
 }
